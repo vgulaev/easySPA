@@ -12,15 +12,20 @@ function httpGetAsync(method, theUrl, data = null) {
   });
 }
 
-window.addEventListener('load', async function( event ) {
+function requestData() {
   httpGetAsync('GET', 'https://fathomless-peak-55967.herokuapp.com/echo/all')
     .then((data) => {
-      alert(data);
+      let el = document.getElementById('getRequest');
+      el.innerText = data;
     });
   let mySongs = ['Happy New Year', 'Jingle balls'];
   httpGetAsync('POST', 'https://fathomless-peak-55967.herokuapp.com/echo/songs', JSON.stringify(mySongs))
     .then((data) => {
-      alert(data);
+      let el = document.getElementById('postRequest');
+      el.innerText = data;
     });
-});
+}
 
+window.addEventListener('load', async function( event ) {
+  // requestData();
+});
