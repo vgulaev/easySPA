@@ -3,12 +3,17 @@
 <head>
   <title>Easy</title>
 </head>
+<script type="text/javascript" src="minesweeper.js"></script>
 <script type="text/javascript" src="index.js"></script>
 <body>
+  <button onclick="newGame();">New game</button>
   <p>Some get request</p>
   <div id="getRequest"></div>
   <p>Some post request</p>
   <div id="postRequest"></div>
   <button onclick="requestData();">Request data</button>
+  <div id="field">
+    <button onclick="app.onClickBox(0,0);">_</button>
+  </div>
 </body>
 </html>
